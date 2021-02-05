@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.finance$</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="header">
+    <img class="header__logo" src="assets/logo.svg" alt="Logo dev finance">
+  </header>
+
+  <main class="main">
+    <section class="balance">
+      <h2 class="sr-only">Balanço</h2>
+
+      <div class="card">
+        <h3 class="card__title">
+          <span>Entradas</span>
+          <img src="assets/income.svg" alt="Imagem de Entradas">
+        </h3>
+        <p
+          class="card__content"
+          id="incomeDisplay">
+          <!-- Editado pelo javascript -->
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">
+          <span>Saídas</span>
+          <img src="assets/expense.svg" alt="Imagem de saída">
+        </h3>
+        <p
+          class="card__content"
+          id="expenseDisplay">
+          <!-- Editado pelo javascript -->
+        </p>
+      </div>
+
+      <div class="card card--green" id="cardTotal">
+        <h3 class="card__title">
+          <span>Total</span>
+          <img src="assets/total.svg" alt="Imagem de Total">
+        </h3>
+        <p
+          class="card__content"
+          id="totalDisplay">
+          <!-- Editado pelo javascript -->
+        </p>
+      </div>
+
+    </section>
+
+    <section class="transaction">
+      <h2 class="sr-only">Transações</h2>
+
+      <a href="#" onclick="Modal.open()" class="button button--new">+ nova transação</a>
+
+      <table class="dataTable">
+        <thead class="dataTable__head">
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class="dataTable__body">
+          <!-- Editado pelo javascript -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div class="modal">
+    <div class="modal__box">
+      <div class="form">
+        <h2 class="form__title">Nova Transação</h2>
+        <form action="" onsubmit="Form.submit(event)">
+
+          <div class="fgroup">
+            <label
+              for="description"
+              class="sr-only">Descrição</label>
+            <input
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Descrição"
+              pattern=".*[a-zA-Z]+.*"
+              required />
+          </div>
+
+          <div class="fgroup">
+            <label
+              for="amount"
+              class="sr-only">Valor</label>
+            <input
+              type="number"
+              step="0.01"
+              id="amount"
+              name="amount"
+              placeholder="0,00"
+              required />
+            <small class="fgroup__help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+          </div>
+
+          <div class="fgroup">
+            <label
+              for="date"
+              class="sr-only">Data</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              placeholder="01/01/2020"
+              required />
+          </div>
+
+          <div class="fgroup fgroup--actions">
+            <a href="#" class="button button--cancel">Cancelar</a>
+            <button class="button button--submit" type="submit">Salvar</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer__content">dev.finance$</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
