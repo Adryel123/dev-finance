@@ -64,6 +64,11 @@ const Form = {
     Form.clearFields()
     Modal.close()
   },
+
+  close() {
+    Form.clearFields()
+    Modal.close()
+  }
 }
 
 const Transaction = {
